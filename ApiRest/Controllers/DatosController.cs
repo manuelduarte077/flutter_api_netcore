@@ -13,13 +13,13 @@ using Newtonsoft.Json;
 
 namespace ApiRest.Controllers
 {
-  
+
     [EnableCors("MyPolicy")]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class DatosController : ControllerBase
     {
-        private string _connectionString = "Server=localhost;Database=bdlugares;Uid=root;Pwd=;";
+        private string _connectionString = "Server=localhost;Database=bdplaces;Uid=root;Pwd=;";
 
 
         [HttpGet("lugares")]
@@ -75,7 +75,7 @@ namespace ApiRest.Controllers
                 connection.Close();
 
                 var lista = new List<lugares>();
-                
+
 
 
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -93,7 +93,7 @@ namespace ApiRest.Controllers
                     lugar.latitud = ((double)dt.Rows[i]["latitud"]);
                     lugar.longitud = ((double)dt.Rows[i]["longitud"]);
                     lugar.title = (dt.Rows[i]["title"]).ToString();
-                    lugar.reaction  = (dt.Rows[i]["reaction"]).ToString();
+                    lugar.reaction = (dt.Rows[i]["reaction"]).ToString();
                     lugar.rating = int.Parse((dt.Rows[i]["rating"]).ToString());
 
                     lista.Add(lugar);
@@ -121,21 +121,22 @@ namespace ApiRest.Controllers
 
     }
 
-    public class lugares {
-       
-        public int id   { get; set; }
-        public String nombre  { get; set; }
-        public String descripcion  { get; set; }
-        public String direccion  { get; set; }
-        public String telefono  { get; set; }
-        public String website  { get; set; }
-        public String imagen_nombre  { get; set; }
-        public String importancia  { get; set; }
-        public double latitud  { get; set; }
-        public double longitud  { get; set; }
-        public String title  { get; set; }
-        public String reaction  { get; set; }
-        public int rating {get; set;}
+    public class lugares
+    {
+
+        public int id { get; set; }
+        public String nombre { get; set; }
+        public String descripcion { get; set; }
+        public String direccion { get; set; }
+        public String telefono { get; set; }
+        public String website { get; set; }
+        public String imagen_nombre { get; set; }
+        public String importancia { get; set; }
+        public double latitud { get; set; }
+        public double longitud { get; set; }
+        public String title { get; set; }
+        public String reaction { get; set; }
+        public int rating { get; set; }
 
     }
 }
