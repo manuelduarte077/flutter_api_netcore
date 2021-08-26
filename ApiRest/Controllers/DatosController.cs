@@ -50,8 +50,7 @@ namespace ApiRest.Controllers
             }
 
         }
-
-
+        
         [HttpGet("lugaresv2")]
         public IActionResult GetLugaresv2()
         {
@@ -76,8 +75,6 @@ namespace ApiRest.Controllers
 
                 var lista = new List<lugares>();
 
-
-
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     var lugar = new lugares();
@@ -99,7 +96,6 @@ namespace ApiRest.Controllers
                     lista.Add(lugar);
 
                 }
-
 
                 if (lista.Count == 0)
                 {

@@ -23,7 +23,7 @@ class PlaceScreen extends StatefulWidget {
 
 class _MiLugarState extends State<PlaceScreen> {
   Future<List<Lugar>> _getDatosLugar() async {
-    var url = Uri.parse('http://localhost:5001/api/v1/datos/lugares');
+    var url = Uri.parse('http://127.0.0.1:5001/api/v1/datos/lugares');
 
     var data = await http.get(url); //http://mtwdm.kicks-ass.net/lugaresApi/"
 
@@ -63,7 +63,6 @@ class _MiLugarState extends State<PlaceScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-
     //inicializando el progressHub
     _progressHUD = ProgressHUD(
       backgroundColor: Colors.black12,
